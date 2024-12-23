@@ -1,0 +1,3 @@
+pod 'PDFKit'  # PDF işleme için
+pod 'Alamofire'  # Network istekleri için
+pod 'SwiftyJSON'  # JSON işleme için 
