@@ -162,6 +162,10 @@ public enum Contract {
         public var isFavorite: Bool
         public var userNotes: String?
         
+        public mutating func toggleFavorite() {
+            isFavorite.toggle()
+        }
+        
         public init(id: UUID = UUID(),
                     fileName: String,
                     analyzedDate: Date,

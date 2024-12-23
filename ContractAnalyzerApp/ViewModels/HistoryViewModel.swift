@@ -1,13 +1,15 @@
 import Foundation
+import Combine
 
 final class HistoryViewModel: ObservableObject {
     @Published var contracts: [Contract.AnalyzedContract] = []
     private let historyManager = HistoryManager.shared
     
     init() {
+        // İlk yükleme
         contracts = historyManager.contracts
         
-        // HistoryManager'dan güncellemeleri dinle
+        // HistoryManager'ı dinle
         NotificationCenter.default.addObserver(self,
             selector: #selector(contractsDidChange),
             name: .contractsDidChange,
@@ -19,7 +21,9 @@ final class HistoryViewModel: ObservableObject {
     }
     
     @objc private func contractsDidChange() {
-        contracts = historyManager.contracts
+        DispatchQueue.main.async {
+            self.contracts = self.historyManager.contracts
+        }
     }
 }
 

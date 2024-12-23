@@ -79,11 +79,7 @@ class DocumentPickerViewModel: ObservableObject {
                 historyManager.saveContract(analyzedContract)
                 isAnalyzing = false
                 shouldDismiss = true
-                // Bir süre sonra shouldDismiss'i sıfırla
-                Task { @MainActor in
-                    try? await Task.sleep(nanoseconds: 500_000_000) // 0.5 saniye
-                    shouldDismiss = false
-                }
+                NotificationCenter.default.post(name: .contractsDidChange, object: nil)
             }
         } catch {
             await MainActor.run {

@@ -4,6 +4,8 @@ struct HistoryView: View {
     @StateObject private var viewModel = HistoryViewModel()
     @State private var showingFavoritesOnly = false
     @State private var searchText = ""
+    @State private var showingDeleteAlert = false
+    @State private var contractToDelete: Contract.AnalyzedContract?
     
     var filteredContracts: [Contract.AnalyzedContract] {
         var contracts = viewModel.contracts
@@ -25,6 +27,15 @@ struct HistoryView: View {
                     NavigationLink(destination: ContractDetailView(contract: contract)) {
                         ContractHistoryRow(contract: contract)
                     }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button(role: .destructive) {
+                            contractToDelete = contract
+                            showingDeleteAlert = true
+                            HistoryManager.shared.tempDeleteContract(contract)
+                        } label: {
+                            Label("Sil", systemImage: "trash")
+                        }
+                    }
                 }
             }
             .navigationTitle("Analizler")
@@ -36,6 +47,18 @@ struct HistoryView: View {
                     }
                 }
             }
+            .alert("Analizi Sil", isPresented: $showingDeleteAlert, presenting: contractToDelete) { contract in
+                Button("Sil", role: .destructive) {
+                    HistoryManager.shared.confirmDelete()
+                    contractToDelete = nil
+                }
+                Button("İptal", role: .cancel) {
+                    HistoryManager.shared.cancelDelete()
+                    contractToDelete = nil
+                }
+            } message: { contract in
+                Text("\(contract.fileName) dosyasını silmek istediğinizden emin misiniz?")
+            }
         }
     }
 }
@@ -43,6 +66,12 @@ struct HistoryView: View {
 struct ContractHistoryRow: View {
     let contract: Contract.AnalyzedContract
     @ObservedObject private var historyManager = HistoryManager.shared
+    @State private var isFavorite: Bool
+    
+    init(contract: Contract.AnalyzedContract) {
+        self.contract = contract
+        _isFavorite = State(initialValue: contract.isFavorite)
+    }
     
     var body: some View {
         HStack {
@@ -57,12 +86,20 @@ struct ContractHistoryRow: View {
             Spacer()
             
             Button(action: {
-                historyManager.toggleFavorite(contract)
+                withAnimation(.spring()) {
+                    isFavorite.toggle()
+                    historyManager.toggleFavorite(contract)
+                }
             }) {
-                Image(systemName: contract.isFavorite ? "star.fill" : "star")
-                    .foregroundColor(.yellow)
+                Image(systemName: isFavorite ? "star.fill" : "star")
+                    .font(.title2)
+                    .foregroundColor(isFavorite ? .yellow : .gray)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
+            .buttonStyle(BorderlessButtonStyle())
         }
+        .padding(.vertical, 4)
     }
 }
 

@@ -58,6 +58,7 @@ struct DocumentPickerView: View {
         .onChange(of: viewModel.shouldDismiss) { shouldDismiss in
             if shouldDismiss {
                 dismiss()
+                viewModel.shouldDismiss = false
             }
         }
         .fileImporter(
