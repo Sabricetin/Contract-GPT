@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ContractDetailView: View {
     let contract: Contract.AnalyzedContract
-    @State private var showingShareSheet = false
     @State private var selectedLanguage = "tr"
     
     var body: some View {
@@ -26,16 +25,30 @@ struct ContractDetailView: View {
         .navigationTitle("Sözleşme Detayı")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    showingShareSheet = true
-                }) {
-                    Image(systemName: "square.and.arrow.up")
-                }
+                ShareLink(item: generateShareText(from: contract.analysis))
             }
         }
-        .sheet(isPresented: $showingShareSheet) {
-            ShareView(analysis: contract.analysis)
-        }
+    }
+    
+    private func generateShareText(from analysis: Contract.AnalysisResult) -> String {
+        """
+        SÖZLEŞME ANALİZ RAPORU
+        
+        Risk Skoru: \(analysis.formattedRiskScore)
+        Risk Seviyesi: \(analysis.riskLevel.rawValue)
+        
+        ÖZET:
+        \(analysis.summary)
+        
+        ÖNEMLİ MADDELER:
+        \(analysis.keyPoints.map { "• \($0.title)" }.joined(separator: "\n"))
+        
+        RİSKLER:
+        \(analysis.risks.map { "• \($0.title) (\($0.severity.rawValue))" }.joined(separator: "\n"))
+        
+        ÖNERİLER:
+        \(analysis.recommendations.map { "• \($0)" }.joined(separator: "\n"))
+        """
     }
 }
 
