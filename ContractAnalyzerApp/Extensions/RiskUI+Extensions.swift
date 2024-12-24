@@ -1,12 +1,11 @@
 import SwiftUI
 
-// MARK: - Risk UI Protocol
-public protocol RiskUI {
+protocol RiskUI {
     var uiColor: Color { get }
     var uiIcon: String { get }
 }
 
-// MARK: - Risk Level Extensions
+// MARK: - RiskLevel Extensions
 extension Contract.RiskLevel: RiskUI {
     public var uiColor: Color {
         switch self {
@@ -37,9 +36,9 @@ extension Contract.Importance: RiskUI {
     
     public var uiIcon: String {
         switch self {
-        case .high: return "exclamationmark.circle.fill"
-        case .medium: return "arrow.up.circle.fill"
-        case .low: return "info.circle.fill"
+        case .high: return "star.fill"
+        case .medium: return "star.leadinghalf.filled"
+        case .low: return "star"
         }
     }
 }
@@ -63,8 +62,8 @@ extension Contract.Severity: RiskUI {
     }
 }
 
-// MARK: - Priority Extensions
-extension Contract.Priority: RiskUI {
+// MARK: - RiskImpact Extensions
+extension Contract.RiskImpact: RiskUI {
     public var uiColor: Color {
         switch self {
         case .high: return .red

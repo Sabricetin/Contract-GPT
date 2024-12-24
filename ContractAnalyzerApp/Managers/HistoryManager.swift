@@ -37,6 +37,11 @@ public class HistoryManager: ObservableObject {
         if let encoded = try? JSONEncoder().encode(contracts) {
             defaults.set(encoded, forKey: contractsKey)
             defaults.synchronize()
+            
+            DispatchQueue.main.async {
+                self.objectWillChange.send()
+                NotificationCenter.default.post(name: .contractsDidChange, object: nil)
+            }
         }
     }
     
@@ -62,20 +67,28 @@ public class HistoryManager: ObservableObject {
         if let index = contracts.firstIndex(where: { $0.id == contract.id }) {
             tempDeletedContracts.append(contracts[index])
             contracts.remove(at: index)
+            saveToDefaults()
             objectWillChange.send()
         }
     }
     
     public func confirmDelete() {
-        tempDeletedContracts.removeAll()
-        saveToDefaults()
+        if let contract = tempDeletedContracts.first {
+            contracts.removeAll { $0.id == contract.id }
+            tempDeletedContracts.removeAll()
+            saveToDefaults()
+            objectWillChange.send()
+            NotificationCenter.default.post(name: .contractsDidChange, object: nil)
+        }
     }
     
     public func cancelDelete() {
         if let contract = tempDeletedContracts.first {
             contracts.append(contract)
             tempDeletedContracts.removeAll()
+            saveToDefaults()
             objectWillChange.send()
+            NotificationCenter.default.post(name: .contractsDidChange, object: nil)
         }
     }
 } 

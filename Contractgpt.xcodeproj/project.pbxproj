@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1E14619E2D161CCA0075084C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14619D2D161CCA0075084C /* SettingsView.swift */; };
+		1E1461A12D19FDC30075084C /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14619F2D19FDC30075084C /* ToastModifier.swift */; };
+		1E1461A52D19FDD70075084C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1461A22D19FDD70075084C /* ErrorView.swift */; };
+		1E1461A72D19FDD70075084C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1461A42D19FDD70075084C /* LoadingView.swift */; };
+		1E1461A92D1A0A370075084C /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1461A82D1A0A360075084C /* LoadingAnimation.swift */; };
+		1E1461AC2D1A0DC60075084C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1461AB2D1A0DC60075084C /* Lottie */; };
+		1E1461B02D1A12BD0075084C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E1461AE2D1A12630075084C /* loading.json */; };
+		1E1461B22D1AA60B0075084C /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1461B12D1AA60B0075084C /* NotificationCenter+Extension.swift */; };
+		1E1461B42D1AAA920075084C /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1461B32D1AAA920075084C /* Contract.swift */; };
 		1E7FEDEB2D1468F000D99EF2 /* ContractgptApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FEDEA2D1468F000D99EF2 /* ContractgptApp.swift */; };
 		1E7FEDED2D1468F000D99EF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FEDEC2D1468F000D99EF2 /* ContentView.swift */; };
 		1E7FEDEF2D1468F100D99EF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7FEDEE2D1468F100D99EF2 /* Assets.xcassets */; };
@@ -41,15 +49,20 @@
 		1E7FEE4F2D147BD500D99EF2 /* ImportanceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FEE4E2D147BD500D99EF2 /* ImportanceLabel.swift */; };
 		1E7FEE602D147F4F00D99EF2 /* RiskUI+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FEE5E2D147F4F00D99EF2 /* RiskUI+Extensions.swift */; };
 		1E7FEE622D147F8000D99EF2 /* TemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FEE612D147F8000D99EF2 /* TemplatesView.swift */; };
-		1E7FEE662D148FD800D99EF2 /* ContractAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FEE652D148FD800D99EF2 /* ContractAnalysis.swift */; };
 		1EF104772D15B3BD00D268D2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF104752D15B3BD00D268D2 /* MainViewModel.swift */; };
 		1EF104782D15B3BD00D268D2 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF104762D15B3BD00D268D2 /* HistoryViewModel.swift */; };
-		1EF1047A2D15C19F00D268D2 /* ContractDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF104792D15C19F00D268D2 /* ContractDifference.swift */; };
 		1EF1047C2D15C48500D268D2 /* SupportedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1047B2D15C48500D268D2 /* SupportedLanguage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E14619D2D161CCA0075084C /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1E14619F2D19FDC30075084C /* ToastModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		1E1461A22D19FDD70075084C /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		1E1461A42D19FDD70075084C /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1E1461A82D1A0A360075084C /* LoadingAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
+		1E1461AE2D1A12630075084C /* loading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		1E1461B12D1AA60B0075084C /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
+		1E1461B32D1AAA920075084C /* Contract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		1E7FEDE72D1468F000D99EF2 /* Contractgpt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contractgpt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7FEDEA2D1468F000D99EF2 /* ContractgptApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractgptApp.swift; sourceTree = "<group>"; };
 		1E7FEDEC2D1468F000D99EF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,10 +96,8 @@
 		1E7FEE4E2D147BD500D99EF2 /* ImportanceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportanceLabel.swift; sourceTree = "<group>"; };
 		1E7FEE5E2D147F4F00D99EF2 /* RiskUI+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RiskUI+Extensions.swift"; sourceTree = "<group>"; };
 		1E7FEE612D147F8000D99EF2 /* TemplatesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplatesView.swift; sourceTree = "<group>"; };
-		1E7FEE652D148FD800D99EF2 /* ContractAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractAnalysis.swift; sourceTree = "<group>"; };
 		1EF104752D15B3BD00D268D2 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1EF104762D15B3BD00D268D2 /* HistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
-		1EF104792D15C19F00D268D2 /* ContractDifference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractDifference.swift; sourceTree = "<group>"; };
 		1EF1047B2D15C48500D268D2 /* SupportedLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportedLanguage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,15 +107,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E7FEE3A2D1477D900D99EF2 /* Alamofire in Frameworks */,
+				1E1461AC2D1A0DC60075084C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E1461A02D19FDC30075084C /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				1E14619F2D19FDC30075084C /* ToastModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		1E1461AD2D1A10CE0075084C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1E1461AE2D1A12630075084C /* loading.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1E7FEDDE2D1468F000D99EF2 = {
 			isa = PBXGroup;
 			children = (
+				1E1461AD2D1A10CE0075084C /* Resources */,
 				1E7FEE5F2D147F4F00D99EF2 /* Extensions */,
 				1E7FEE222D1475D300D99EF2 /* Utils */,
 				1E7FEE1F2D14758000D99EF2 /* Managers */,
@@ -148,11 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				1E7FEE262D14768900D99EF2 /* ClauseSuggestion.swift */,
+				1E1461B32D1AAA920075084C /* Contract.swift */,
 				1E7FEE282D14769600D99EF2 /* ContractCategory.swift */,
 				1E7FEDFA2D1474CB00D99EF2 /* ContractTemplate.swift */,
 				1E7FEE2A2D1476A800D99EF2 /* ExportFormat.swift */,
-				1E7FEE652D148FD800D99EF2 /* ContractAnalysis.swift */,
-				1EF104792D15C19F00D268D2 /* ContractDifference.swift */,
 				1EF1047B2D15C48500D268D2 /* SupportedLanguage.swift */,
 			);
 			name = Models;
@@ -175,19 +203,23 @@
 			isa = PBXGroup;
 			children = (
 				1E7FEE462D147A6900D99EF2 /* Labels */,
+				1E1461A02D19FDC30075084C /* Modifiers */,
 				1E7FEDFF2D1474CB00D99EF2 /* AnalysisResultView.swift */,
 				1E7FEE002D1474CB00D99EF2 /* ComparisonView.swift */,
+				1E7FEE302D1476F200D99EF2 /* ContractDetailView.swift */,
 				1E7FEE012D1474CB00D99EF2 /* DocumentPickerView.swift */,
+				1E1461A22D19FDD70075084C /* ErrorView.swift */,
+				1E7FEE322D1476F200D99EF2 /* FormatPicker.swift */,
 				1E7FEE022D1474CB00D99EF2 /* HistoryView.swift */,
+				1E1461A82D1A0A360075084C /* LoadingAnimation.swift */,
+				1E1461A42D19FDD70075084C /* LoadingView.swift */,
 				1E7FEE032D1474CB00D99EF2 /* MainView.swift */,
 				1E7FEE042D1474CB00D99EF2 /* RiskVisualizationView.swift */,
-				1E7FEE052D1474CB00D99EF2 /* ShareView.swift */,
-				1E7FEE062D1474CB00D99EF2 /* TemplateLibraryView.swift */,
-				1E7FEE302D1476F200D99EF2 /* ContractDetailView.swift */,
-				1E7FEE322D1476F200D99EF2 /* FormatPicker.swift */,
-				1E7FEE312D1476F200D99EF2 /* TemplateDetailView.swift */,
-				1E7FEE612D147F8000D99EF2 /* TemplatesView.swift */,
 				1E14619D2D161CCA0075084C /* SettingsView.swift */,
+				1E7FEE052D1474CB00D99EF2 /* ShareView.swift */,
+				1E7FEE312D1476F200D99EF2 /* TemplateDetailView.swift */,
+				1E7FEE062D1474CB00D99EF2 /* TemplateLibraryView.swift */,
+				1E7FEE612D147F8000D99EF2 /* TemplatesView.swift */,
 			);
 			name = Views;
 			path = ContractAnalyzerApp/Views;
@@ -237,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				1E7FEE5E2D147F4F00D99EF2 /* RiskUI+Extensions.swift */,
+				1E1461B12D1AA60B0075084C /* NotificationCenter+Extension.swift */,
 			);
 			name = Extensions;
 			path = ContractAnalyzerApp/Extensions;
@@ -260,6 +293,7 @@
 			name = Contractgpt;
 			packageProductDependencies = (
 				1E7FEE392D1477D900D99EF2 /* Alamofire */,
+				1E1461AB2D1A0DC60075084C /* Lottie */,
 			);
 			productName = Contractgpt;
 			productReference = 1E7FEDE72D1468F000D99EF2 /* Contractgpt.app */;
@@ -291,6 +325,7 @@
 			mainGroup = 1E7FEDDE2D1468F000D99EF2;
 			packageReferences = (
 				1E7FEE382D1477D900D99EF2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1E1461AA2D1A0DC50075084C /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 1E7FEDE82D1468F000D99EF2 /* Products */;
 			projectDirPath = "";
@@ -306,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1461B02D1A12BD0075084C /* loading.json in Resources */,
 				1E7FEDF22D1468F100D99EF2 /* Preview Assets.xcassets in Resources */,
 				1E7FEDEF2D1468F100D99EF2 /* Assets.xcassets in Resources */,
 			);
@@ -324,12 +360,14 @@
 				1E7FEE2B2D1476A800D99EF2 /* ExportFormat.swift in Sources */,
 				1E7FEE342D1476F300D99EF2 /* ContractDetailView.swift in Sources */,
 				1E7FEE622D147F8000D99EF2 /* TemplatesView.swift in Sources */,
+				1E1461A12D19FDC30075084C /* ToastModifier.swift in Sources */,
 				1E7FEE172D1474CB00D99EF2 /* RiskVisualizationView.swift in Sources */,
+				1E1461B22D1AA60B0075084C /* NotificationCenter+Extension.swift in Sources */,
 				1E7FEE4F2D147BD500D99EF2 /* ImportanceLabel.swift in Sources */,
-				1E7FEE662D148FD800D99EF2 /* ContractAnalysis.swift in Sources */,
 				1E7FEE162D1474CB00D99EF2 /* MainView.swift in Sources */,
 				1E7FEE352D1476F300D99EF2 /* TemplateDetailView.swift in Sources */,
 				1E7FEE122D1474CB00D99EF2 /* AnalysisResultView.swift in Sources */,
+				1E1461A72D19FDD70075084C /* LoadingView.swift in Sources */,
 				1E7FEE292D14769600D99EF2 /* ContractCategory.swift in Sources */,
 				1E7FEE2D2D1476BC00D99EF2 /* TemplateService.swift in Sources */,
 				1EF104782D15B3BD00D268D2 /* HistoryViewModel.swift in Sources */,
@@ -338,19 +376,21 @@
 				1E7FEDED2D1468F000D99EF2 /* ContentView.swift in Sources */,
 				1E7FEE192D1474CB00D99EF2 /* TemplateLibraryView.swift in Sources */,
 				1E7FEE1D2D1474CB00D99EF2 /* TranslationService.swift in Sources */,
+				1E1461A52D19FDD70075084C /* ErrorView.swift in Sources */,
 				1E7FEE132D1474CB00D99EF2 /* ComparisonView.swift in Sources */,
 				1E14619E2D161CCA0075084C /* SettingsView.swift in Sources */,
 				1E7FEE232D1475D300D99EF2 /* ShareUtils.swift in Sources */,
 				1E7FEE272D14768900D99EF2 /* ClauseSuggestion.swift in Sources */,
-				1EF1047A2D15C19F00D268D2 /* ContractDifference.swift in Sources */,
 				1E7FEE152D1474CB00D99EF2 /* HistoryView.swift in Sources */,
 				1E7FEE142D1474CB00D99EF2 /* DocumentPickerView.swift in Sources */,
 				1E7FEE112D1474CB00D99EF2 /* DocumentPickerViewModel.swift in Sources */,
 				1E7FEE1A2D1474CB00D99EF2 /* ChatGPTService.swift in Sources */,
+				1E1461B42D1AAA920075084C /* Contract.swift in Sources */,
 				1E7FEE182D1474CB00D99EF2 /* ShareView.swift in Sources */,
 				1E7FEE2F2D1476C900D99EF2 /* TemplateViewModel.swift in Sources */,
 				1E7FEDEB2D1468F000D99EF2 /* ContractgptApp.swift in Sources */,
 				1E7FEE1C2D1474CB00D99EF2 /* PDFProcessor.swift in Sources */,
+				1E1461A92D1A0A370075084C /* LoadingAnimation.swift in Sources */,
 				1E7FEE0F2D1474CB00D99EF2 /* ContractTemplate.swift in Sources */,
 				1E7FEE602D147F4F00D99EF2 /* RiskUI+Extensions.swift in Sources */,
 				1EF104772D15B3BD00D268D2 /* MainViewModel.swift in Sources */,
@@ -561,6 +601,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1E1461AA2D1A0DC50075084C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		1E7FEE382D1477D900D99EF2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -572,6 +620,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1E1461AB2D1A0DC60075084C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E1461AA2D1A0DC50075084C /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		1E7FEE392D1477D900D99EF2 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1E7FEE382D1477D900D99EF2 /* XCRemoteSwiftPackageReference "Alamofire" */;

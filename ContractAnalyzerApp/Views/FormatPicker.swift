@@ -6,7 +6,7 @@ struct FormatPicker: View {
     var body: some View {
         Picker("Format", selection: $selectedFormat) {
             ForEach(ExportFormat.allCases, id: \.self) { format in
-                Label(format.rawValue, systemImage: format.systemImage)
+                Label(format.rawValue, systemImage: format.icon)
                     .tag(format)
             }
         }

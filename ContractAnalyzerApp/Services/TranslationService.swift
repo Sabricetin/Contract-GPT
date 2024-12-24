@@ -70,8 +70,13 @@ class TranslationService {
         for risk in risks {
             let translatedTitle = try await translateToLanguage(risk.title, to: language)
             let translatedDescription = try await translateToLanguage(risk.description, to: language)
-            let translatedAction = risk.suggestedAction != nil ? 
-                try await translateToLanguage(risk.suggestedAction!, to: language) : nil
+            
+            let translatedAction: String?
+            if let action = risk.suggestedAction {
+                translatedAction = try await translateToLanguage(action, to: language)
+            } else {
+                translatedAction = nil
+            }
             
             let translatedRisk = Contract.Risk(
                 title: translatedTitle,

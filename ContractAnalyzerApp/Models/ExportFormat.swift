@@ -2,30 +2,19 @@ import Foundation
 
 public enum ExportFormat: String, CaseIterable {
     case pdf = "PDF"
-    case docx = "Word"
-    case txt = "Text"
+    case text = "Metin"
     
-    var systemImage: String {
+    var icon: String {
         switch self {
-        case .pdf: return "doc.fill"
-        case .docx: return "doc.text.fill"
-        case .txt: return "doc.plaintext.fill"
+        case .pdf: return "doc.pdf"
+        case .text: return "doc.text"
         }
     }
     
-    var fileExtension: String {
+    var description: String {
         switch self {
-        case .pdf: return "pdf"
-        case .docx: return "docx"
-        case .txt: return "txt"
-        }
-    }
-    
-    var mimeType: String {
-        switch self {
-        case .pdf: return "application/pdf"
-        case .docx: return "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        case .txt: return "text/plain"
+        case .pdf: return "Detaylı PDF raporu"
+        case .text: return "Düz metin formatı"
         }
     }
 } 

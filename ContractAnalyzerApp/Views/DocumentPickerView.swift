@@ -1,5 +1,6 @@
 import SwiftUI
 import UniformTypeIdentifiers
+import Lottie
 
 struct DocumentPickerView: View {
     @ObservedObject var viewModel: DocumentPickerViewModel
@@ -9,8 +10,15 @@ struct DocumentPickerView: View {
         NavigationView {
             VStack {
                 if viewModel.isAnalyzing {
-                    ProgressView("Sözleşme analiz ediliyor...")
-                        .padding()
+                    VStack(spacing: 20) {
+                        LoadingAnimation(name: "loading.json")
+                            .frame(width: 200, height: 200)
+                        
+                        Text("Sözleşme analiz ediliyor...")
+                            .font(.headline)
+                            .foregroundColor(.secondary)
+                    }
+                    .padding()
                 } else {
                     VStack(spacing: 20) {
                         Image(systemName: "doc.text.magnifyingglass")
@@ -77,6 +85,7 @@ struct DocumentPickerView: View {
                 viewModel.error = "Dosya seçilirken bir hata oluştu: \(error.localizedDescription)"
             }
         }
+        .toast(isPresented: $viewModel.showToast, message: viewModel.toastMessage, type: viewModel.toastType)
     }
 }
 

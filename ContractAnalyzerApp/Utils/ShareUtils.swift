@@ -4,7 +4,7 @@ import UIKit
 import UniformTypeIdentifiers
 import SwiftUI
 
-// Type aliases - Contract namespace'inden alıyoruz
+// Type aliases
 public typealias ContractResult = Contract.AnalysisResult
 public typealias ContractKeyPoint = Contract.KeyPoint
 public typealias ContractRisk = Contract.Risk
@@ -39,10 +39,8 @@ public class ShareUtils {
         switch format {
         case .pdf:
             return try generatePDF(from: content)
-        case .docx:
-            return try generateDOCX(from: content)
-        case .txt:
-            return try generateTXT(from: content)
+        case .text:
+            return try generateTextFile(from: content)
         }
     }
     
@@ -55,30 +53,29 @@ public class ShareUtils {
         ----
         \(analysis.summary)
         
-        ÖNEMLİ MADDELER
+        ÖNEMLİ NOKTALAR
         --------------
         """
         
         for point in analysis.keyPoints {
             content += """
             
-            \(point.title) (Madde \(point.articleNumber))
+            \(point.title)
             Önem: \(point.importance.rawValue)
+            Madde: \(point.articleNumber)
             \(point.description)
             """
         }
         
         content += "\n\nRİSKLER\n-------"
-        
         for risk in analysis.risks {
             content += """
             
             \(risk.title)
-            Şiddet: \(risk.severity.rawValue)
+            Risk Seviyesi: \(risk.severity.rawValue)
             İlgili Madde: \(risk.relatedArticle)
             \(risk.description)
             """
-            
             if let action = risk.suggestedAction {
                 content += "\nÖnerilen Aksiyon: \(action)"
             }
@@ -110,12 +107,7 @@ public class ShareUtils {
             
             content += "\n\nRisk Önerileri:"
             for recommendation in assessment.recommendations {
-                content += """
-                
-                \(recommendation.title)
-                Öncelik: \(recommendation.priority.rawValue)
-                \(recommendation.description)
-                """
+                content += "\n• \(recommendation)"
             }
         }
         
@@ -153,17 +145,7 @@ public class ShareUtils {
         return tempURL
     }
     
-    private func generateDOCX(from content: String) throws -> URL {
-        // Basit bir implementasyon - gerçek uygulamada DOCX oluşturma kütüphanesi kullanılmalı
-        let tempURL = FileManager.default.temporaryDirectory
-            .appendingPathComponent(UUID().uuidString)
-            .appendingPathExtension("docx")
-        
-        try content.write(to: tempURL, atomically: true, encoding: .utf8)
-        return tempURL
-    }
-    
-    private func generateTXT(from content: String) throws -> URL {
+    private func generateTextFile(from content: String) throws -> URL {
         let tempURL = FileManager.default.temporaryDirectory
             .appendingPathComponent(UUID().uuidString)
             .appendingPathExtension("txt")
